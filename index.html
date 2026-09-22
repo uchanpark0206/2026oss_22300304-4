@@ -4,8 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="form1_css.html">
 </head>
 <body>
-    <h1>hi my name is 000</h1>
+    <h1>수업 실습</h1>
+    <!--
+    수업 내용
+    html form(사용자가 입력한 데이터를 서버로 전달하는 유일한 방법)
+
+    ex)로그인 회원가입 검색 게시글
+
+    fome의 엑션은 2가지
+    submit 
+    reset
+
+    프론트앤드 사용자와 인터랙트
+    백앤드 받은 데이터를 처리?
+
+    orm method
+    get방식vpost방식
+
+    get 
+    url에 노출됨>>비밀번호 같은것이 노출되면 사용자의 편의성 dwon
+    주로 검색 조회에 사용
+    url공유 가능
+
+    post
+    url 노출 안됨
+    url공유 어려움
+
+    
+    
+    -->
+    <form action="form_ok.php" method="post">
+	<label for="unname" >이름</label><br>
+    <input type="text" id="uname" name="unname" palceholder="입력" required><br><!--palceholder는 무슨 의미지?-->
+    <label for="PW">패스워드</label><br>
+    <input type="password" id="PW" name="PW"><br>
+    <label fot="email">이메일</label><br>
+    <input type="text" id="email" name="email" palceholder="입력"><br>
+
+    <input type="checkbox"> 
+    <label>수신동의</label><br>
+    <br>
+    <input type="radio">라디오버튼<br><!-- 라디오 버튼은 뭐하는거지?-->
+    <br>
+    <input type="date"><br>
+        
+    <button type="sbumit">저장</botton>
+    <button type="reset">새로고침</botton>    
+    </form>
 </body>
 </html>

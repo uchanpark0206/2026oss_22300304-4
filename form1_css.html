@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+label {display: block;}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button[type=submit],button[type=reset]{
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type=submit]:hover,button[type=reset]:hover {
+  background-color: #45a049;
+}
+
+    </style>
+</head>
+<body>
+    <form action="form_ok.php" method="post">
+	<label for="unname">이름</label><br>
+    <input type="text" id="uname" name="unname" placeholder="입력" required><br><!--palceholder는 무슨 의미지?-->
+    <br>
+    <label for="PW">패스워드</label><br>
+    <input type="password" id="PW" name="PW"><br>
+    <br>
+    <label fot="email">이메일</label><br>
+    <input type="text" id="email" name="email" palceholder="입력"><br>
+<br>
+    <input type="checkbox"> 
+    <label>수신동의</label><br>
+    <br>
+    <input type="radio">라디오버튼 <input type="radio"id=""name=""value=""checked>남성<input type="radio">여성<br><!-- 라디오 버튼은 뭐하는거지?== 그룹을 성정가능-->
+    <br>
+    생년월일:<br>
+    <input type="date"><br>
+    <br>
+    색상선택:<br>
+    <input type="color" name="color" ><br>
+    <br>
+    지역:<br>
+    <select name ="city">
+        <optgroup label="서울">
+            <option value="1">강서구</option>
+            <option value="2">서초구</option>
+        </optgroup>
+        <optgroup label="경기도">
+            <option value="1">성남시</option>
+            <option value="2">수원시</option>
+        </optgroup>
+    </select><br>
+    <br>
+    취미<br>
+    <input list="fruitslist" name="fruits" id="fruits">
+        <datalist id ="fruitslist">
+            <option value="apple" label="사과">
+            <option value="banana" label="바나나">    
+        </datalist><br>
+        <br>
+        제목:<br>
+        <input tpye="text"name="subject"><br>
+        <br>
+        내용:<br>
+        <textarea name="contant" cols="40" rows="5">
+
+        </textarea>
+        <br>
+        <br>
+    <button type="submit">저장</botton>
+    <button type="reset">새로고침</botton>   
+</body>
+</html>
