@@ -58,6 +58,28 @@
         <br>
     <button type="submit">저장</botton>
     <button type="reset">새로고침</botton>   
+    <script>
+        const form = document.querySelector("#userForm");
 
+        form.addEventListener("submit", function (event) {
+
+        const uname = document.querySelector("#uname");
+
+        if (!uname.checkValidity()) {
+
+            event.preventDefault();
+
+            alert("2~4를 입력하시오");
+
+            uname.focus();
+
+            return;
+
+    }
+
+        alert("등록이 완료되었습니다.");
+
+    });
+    </script>
 </body>
 </html>
