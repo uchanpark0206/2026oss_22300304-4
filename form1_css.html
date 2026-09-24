@@ -1,60 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        form {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-label {display: block;}
-
-input[type=text], select {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-button[type=submit],button[type=reset]{
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-button[type=submit]:hover,button[type=reset]:hover {
-  background-color: #45a049;
-}
-
-    </style>
+    <link rel="stylesheet" href="form1.css">
 </head>
 <body>
-    <form action="form_ok.php" method="post">
-	<label for="unname">이름</label><br>
-    <input type="text" id="uname" name="unname" placeholder="입력" required><br><!--palceholder는 무슨 의미지?-->
+    <form id ="userForm" action="form_ok.php" method="post" novalidate><!--novalidate 이 없으면 자바스크립트 작동을 안함-->
+	<label for="uname">이름</label><br>
+    <input type="text" id="uname" name="uname" placeholder="이름" minlength="2" maxlength="4"required><br>
     <br>
     <label for="PW">패스워드</label><br>
-    <input type="password" id="PW" name="PW"><br>
+    <input type="password" id="PW" name="PW" minlength="8" maxlength="16" required><br>
     <br>
-    <label fot="email">이메일</label><br>
-    <input type="text" id="email" name="email" palceholder="입력"><br>
+    <label for="email">이메일</label><br>
+    <input type="text" id="email" name="email" palceholder="입력"placeholder="이메일"><br>
 <br>
     <input type="checkbox"> 
     <label>수신동의</label><br>
     <br>
-    <input type="radio">라디오버튼 <input type="radio"id=""name=""value=""checked>남성<input type="radio">여성<br><!-- 라디오 버튼은 뭐하는거지?== 그룹을 성정가능-->
+    <input type="radio" name="gender" value="male" checked>남성<input type="radio"  name="gender" value="female">여성<br><!-- 라디오 버튼은 뭐하는거지?== 그룹을 성정가능-->
     <br>
     생년월일:<br>
     <input type="date"><br>
@@ -75,14 +41,14 @@ button[type=submit]:hover,button[type=reset]:hover {
     </select><br>
     <br>
     취미<br>
-    <input list="fruitslist" name="fruits" id="fruits">
+    <input type="text" list="fruitslist" name="fruits" id="fruits"required>
         <datalist id ="fruitslist">
             <option value="apple" label="사과">
             <option value="banana" label="바나나">    
         </datalist><br>
         <br>
         제목:<br>
-        <input tpye="text"name="subject"><br>
+        <input type="text"name="subject"><br>
         <br>
         내용:<br>
         <textarea name="contant" cols="40" rows="5">
@@ -92,5 +58,29 @@ button[type=submit]:hover,button[type=reset]:hover {
         <br>
     <button type="submit">저장</botton>
     <button type="reset">새로고침</botton>   
+  
+    <script>
+        const form = document.querySelector("#userForm");
+
+    form.addEventListener("submit", function (event) {
+
+    const uname = document.querySelector("#uname");
+
+    if (!uname.checkValidity()) {
+
+        event.preventDefault();
+
+        alert("2~4를 입력하시오");
+
+        uname.focus();
+
+        return;
+
+    }
+
+    alert("등록이 완료되었습니다.");
+
+});
+</script>
 </body>
 </html>

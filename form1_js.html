@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="form1.css">
+</head>
+<body>
+    <form id ="userForm" action="form_ok.php" method="post" >
+	<label for="uname">이름</label><br>
+    <input type="text" id="uname" name="uname" placeholder="이름" minlength="2" maxlength="4"required><br>
+    <br>
+    <label for="PW">패스워드</label><br>
+    <input type="password" id="PW" name="PW" minlength="8" maxlength="16" required><br>
+    <br>
+    <label for="email">이메일</label><br>
+    <input type="text" id="email" name="email" palceholder="입력"placeholder="이메일"><br>
+<br>
+    <input type="checkbox"> 
+    <label>수신동의</label><br>
+    <br>
+    <input type="radio" name="gender" value="male" checked>남성<input type="radio"  name="gender" value="female">여성<br><!-- 라디오 버튼은 뭐하는거지?== 그룹을 성정가능-->
+    <br>
+    생년월일:<br>
+    <input type="date"><br>
+    <br>
+    색상선택:<br>
+    <input type="color" name="color" ><br>
+    <br>
+    지역:<br>
+    <select name ="city">
+        <optgroup label="서울">
+            <option value="1">강서구</option>
+            <option value="2">서초구</option>
+        </optgroup>
+        <optgroup label="경기도">
+            <option value="1">성남시</option>
+            <option value="2">수원시</option>
+        </optgroup>
+    </select><br>
+    <br>
+    취미<br>
+    <input type="text" list="fruitslist" name="fruits" id="fruits"required>
+        <datalist id ="fruitslist">
+            <option value="apple" label="사과">
+            <option value="banana" label="바나나">    
+        </datalist><br>
+        <br>
+        제목:<br>
+        <input type="text"name="subject"><br>
+        <br>
+        내용:<br>
+        <textarea name="contant" cols="40" rows="5">
+
+        </textarea>
+        <br>
+        <br>
+    <button type="submit">저장</botton>
+    <button type="reset">새로고침</botton>   
+
+</body>
+</html>

@@ -6,7 +6,7 @@ form {
 
 label {display: block;}
 
-input[type=text], select {
+input[type=text],input[type=email],input[type=password],select,textarea {
   width: 100%;
   padding: 12px;
   margin: 8px 0;
@@ -16,9 +16,23 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type=color]{
   width: 100%;
-  background-color: #4CAF50;
+  height: 50px;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus,input[type=date]:focus,input[type=password]:focus,input[type=color]:focus,select:focus,textarea:focus {
+    border: 2px solid #4CAF50;
+    outline: none;
+}
+button[type=submit],button[type=reset] {
+  background-color: #06f311;width: 100%;
   color: white;
   padding: 14px;
   margin: 8px 0;
@@ -27,6 +41,6 @@ input[type=submit] {
   cursor: pointer;
 }
 
-botton[type=submit]:hover {
+button[type=submit]:hover,button[type=reset]:hover {
   background-color: #45a049;
 }
